@@ -1,5 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+//main pages
+import MainPage from './pages/MainPage';
+import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 //client pages
 import UMain from './pages/UserMain'
@@ -20,7 +23,9 @@ import IClosedTicket from './pages/ITSide/ITClosedTickets'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login/>}/>
+      <Route path="/" element={<MainPage/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/sign-up" element={<SignUp/>}/>
 
       <Route path="/aXRtYWlu" element={<IMain/>}/>
       <Route path="/dXNlcm1haW4=" element={<UMain/>}/>
