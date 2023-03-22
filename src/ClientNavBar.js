@@ -18,6 +18,9 @@ export default function UNavigationBar() {
                 <li>
                     <a href="/Y2xpZW50YWJvdXQ=">About</a>
                 </li>
+                <li>
+                    <a href="/">Log Out</a>
+                </li>
             </ul>
         </nav>
     )
