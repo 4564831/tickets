@@ -15,6 +15,9 @@ export default function INavigationBar() {
                 <li>
                     <a href="/aXRhYm91dA==">About</a>
                 </li>
+                <li>
+                    <a href="/">Log Out</a>
+                </li>
             </ul>
         </nav>
     )
