@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import '../../App.css';
-import { db } from '../../config/firebase-config';
+import '../App.css';
+import { db } from '../config/firebase-config';
 import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
-import INavigationBar from '../../ITNavBar';
+import INavigationBar from './adminNavBar';
 
 export default function IOpenTicket() {
     const [ticketList, setTicketList] = useState([])

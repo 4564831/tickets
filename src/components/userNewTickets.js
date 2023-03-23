@@ -1,9 +1,9 @@
+import * as React from 'react';
 import { useEffect, useState } from 'react';
-import '../../App.css';
-import {db} from '../../config/firebase-config'
+import {db} from '../config/firebase-config';
 import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
-import * as React from 'react'
-import UNavigationBar from '../../ClientNavBar';
+import '../App.css';
+import UNavigationBar from './userNavBar';
 
 export default function UNewTicket() {
     const [ticketList, setTicketList] = useState([])

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import UAbout from "./ClientSide/UserAbout";
-import UClosedTicket from "./ClientSide/UserClosedTickets";
-import UHome from "./ClientSide/UserHome";
-import UNewTicket from "./ClientSide/UserNewTick";
-import UOpenTicket from "./ClientSide/UserOpenTickets";
+import UAbout from "./userAbout";
+import UClosedTicket from "./userClosedTickets";
+import UHome from "./userHome";
+import UNewTicket from "./userNewTickets";
+import UOpenTicket from "./userOpenTickets";
 
 export default function UMain() {
         // set site title

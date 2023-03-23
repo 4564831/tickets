@@ -1,4 +1,4 @@
-import INavigationBar from "../../ITNavBar";
+import INavigationBar from "./adminNavBar";
 
 export default function IAbout() {
     return (

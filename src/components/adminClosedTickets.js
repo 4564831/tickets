@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import '../../App.css';
-import { db } from '../../config/firebase-config';
 import { getDocs, collection, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
-import UNavigationBar from '../../ClientNavBar';
+import { db } from '../config/firebase-config';
+import INavigationBar from './adminNavBar';
+import '../App.css'
 
-export default function UClosedTicket() {
+export default function IClosedTicket() {
     const [ticketList, setTicketList] = useState([])
     const ticketsColl = collection(db, "Test_Tickets2")
     const current = new Date()
@@ -47,7 +47,7 @@ export default function UClosedTicket() {
     
     return (
       <div>
-        <UNavigationBar/>
+        <INavigationBar/>
         <div className="tickets-background">
             <h1>Closed Tickets</h1>
             <div className="ticket-container">

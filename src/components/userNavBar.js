@@ -1,22 +1,22 @@
-import './App.css'
+import '../App.css'
 
 export default function UNavigationBar() {
     return(
         <nav className="navigation-bar">
-            <a href="/Y2xpZW50aG9tZQ=="
+            <a href="/user/home"
                 className="home">Home</a>
             <ul>
                 <li>
-                    <a href="/Y2xpZW50bmV3dGlja2V0">New Ticket</a>
+                    <a href="/user/ticket/new">New Ticket</a>
                 </li>
                 <li>
-                    <a href="/Y2xpZW50b3BlbnRpY2tldA==">Open Tickets</a>
+                    <a href="/user/ticket/open">Open Tickets</a>
                 </li>
                 <li>
-                    <a href="/Y2xpZW50Y2xvc2VkdGlja2V0">Closed Tickets</a>
+                    <a href="/user/ticket/closed">Closed Tickets</a>
                 </li>
                 <li>
-                    <a href="/Y2xpZW50YWJvdXQ=">About</a>
+                    <a href="/user/about=">About</a>
                 </li>
                 <li>
                     <a href="/">Log Out</a>

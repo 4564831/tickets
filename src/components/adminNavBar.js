@@ -1,19 +1,19 @@
-import './App.css'
+import '../App.css'
 
 export default function INavigationBar() {
     return(
         <nav className="navigation-bar">
-            <a href="/aXRob21l"
+            <a href="/admin/home"
                 className="home">Home</a>
             <ul>
                 <li>
-                    <a href="/aXRvcGVudGlja2V0cw==">Open Tickets</a>
+                    <a href="/admin/ticket/open">Open Tickets</a>
                 </li>
                 <li>
-                    <a href="/aXRjbG9zZWR0aWNrZXRz">Closed Tickets</a>
+                    <a href="/admin/ticket/closed">Closed Tickets</a>
                 </li>
                 <li>
-                    <a href="/aXRhYm91dA==">About</a>
+                    <a href="/admin/about">About</a>
                 </li>
                 <li>
                     <a href="/">Log Out</a>

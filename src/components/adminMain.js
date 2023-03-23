@@ -1,15 +1,10 @@
 import { useEffect } from "react";
-import IHome from "./ITSide/ITHome";
-import IOpenTicket from "./ITSide/ITOpenTickets";
-import IClosedTicket from "./ITSide/ITClosedTickets";
-import IAbout from "./ITSide/ITAbout";
+import IHome from "./adminHome";
+import IOpenTicket from "./adminOpenTickets";
+import IClosedTicket from "./adminClosedTickets";
+import IAbout from "./adminAbout";
 
 export default function IMain() {
-    // set site title
-  useEffect(() => {
-    document.title = "SCTicketing System";  
-  }, []);
-
   let component
   switch(window.location.pathname){
     case "/aXRob21l":

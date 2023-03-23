@@ -1,4 +1,4 @@
-import UNavigationBar from "../../ClientNavBar";
+import UNavigationBar from "./userNavBar";
 
 export default function UHome() {
     return (
