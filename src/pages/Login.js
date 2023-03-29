@@ -2,7 +2,7 @@ import React, { Component, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import '../App.css';
 
-function Home() {
+function Login() {
     const navigate = useNavigate()
     const [user, setUser] = useState("")
 
@@ -15,9 +15,9 @@ function Home() {
     }
     return(
         <div className="text-center">
-            <form className="form-signin">
-                <img className="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
-                <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <form>
+                <h1>Home Page</h1>
+                <h3>Login/Signup</h3>
                 <label for="inputEmail" className="sr-only">Email address</label>
                 <input
                   type="email"
@@ -25,18 +25,19 @@ function Home() {
                   placeholder="Username (IT/admin)"
                   onChange={(e) => setUser(e.target.value)}
                   autofocus/>
-                <label for="inputPassword" class="sr-only">password</label>
-                <input type="password" id="inputPassword" placeholder="Password (optional)"/>
-                <p>{`Don't have an account? `}<Link to="/signup">Signup</Link></p>
+                <div>
+                  <label for="inputPassword" class="sr-only">password</label>
+                  <input type="password" id="inputPassword" placeholder="Password (optional)"/>
+                </div>
+                <p>{`Don't have an account? `}<Link to="/sign-up">Register</Link></p>
                 <button
                   className="btn btn-lg btn-primary btn-block"
                   onClick={() => verify(user)}
                 >Login
                 </button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
             </form>
         </div>
     )
 }
 
-export default Home;
+export default Login;
