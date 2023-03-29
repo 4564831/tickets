@@ -6,9 +6,10 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { db } from "../firebase";
-//import { db } from "../config/firebase-config";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+
+import { db as db0 } from "../config/firebase";
+import { db } from "../config/firebase-config";
 
 export default function SignUp() {
     const [showPassword, setShowPassword] = useState(false);
@@ -44,9 +45,9 @@ export default function SignUp() {
         delete formDataCopy.password;
         formDataCopy.timestamp = serverTimestamp();
 
-        await setDoc(doc(db, "users", user.uid), formDataCopy);
+        await setDoc(doc(db0, "users", user.uid), formDataCopy);
             console.log("Sign up was successful");
-        // navigate("/");
+            navigate("/");
         } catch (error) {
             console.log("Something went wrong with the registration");
         }
@@ -83,7 +84,7 @@ export default function SignUp() {
                         onChange={onChange}
                         placeholder="Password"></input>
                 </div>
-                <button>Submit</button>
+              <button>Submit</button>
             </form>
         </div>
     )
