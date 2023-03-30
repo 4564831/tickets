@@ -26,7 +26,7 @@ function Login() {
           password
         );
         if (userCredential.user) {
-          navigate("/");
+          navigate("/dXNlcm1haW4=");
         }
       } catch (error) {
         console.log(error);
