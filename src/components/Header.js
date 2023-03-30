@@ -1,4 +1,5 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -13,12 +14,12 @@ export default function Header() {
         <h1>NavBar Component</h1>
         <div>
           <ul>
-            <li onClick={()=>navigate("/")}>Home</li>
-            <li onClick={()=>navigate("/new")}>New Ticket</li>
-            <li onClick={()=>navigate("/open")}>Open Tickets</li>
-            <li onClick={()=>navigate("/closed")}>Closed Tickets</li>
-            <li onClick={()=>navigate("/about")}>About</li>
-            <li onClick={()=>navigate("/")}>Log Out</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/new">New Tickets</Link></li>
+            <li><Link to="/open">Open Tickets</Link></li>
+            <li><Link to="/closed">Closed Tickets</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/">Logout</Link></li>
           </ul>
         </div>
       </header>
