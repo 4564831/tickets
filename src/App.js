@@ -19,6 +19,8 @@ import IOpenTicket from './pages/ITSide/ITOpenTickets'
 import IClosedTicket from './pages/ITSide/ITClosedTickets'
 
 import Header from './components/Header';
+import Pages from './pages/ForgotPassword';
+import ForgotPassword from './pages/ForgotPassword';
 
 //npm i react-router-dom
 
@@ -30,6 +32,7 @@ function App() {
         <Route path="/" element={<MainPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="forgot-password" element={<ForgotPassword/>}/>
 
         <Route path="/aXRtYWlu" element={<IMain/>}/>
         <Route path="/dXNlcm1haW4=" element={<UMain/>}/>

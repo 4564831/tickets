@@ -58,6 +58,7 @@ function Login() {
               />
             </div>
             <p>{`Don't have an account? `}<Link to="/sign-up">Register</Link></p>
+            <p><Link to="/forgot-password">Forgot Password?</Link></p>
             <button>Login</button>
           </form>
         </div>
