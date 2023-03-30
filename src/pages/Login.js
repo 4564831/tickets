@@ -1,41 +1,65 @@
 import React, { Component, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import '../App.css';
 
 function Login() {
-    const navigate = useNavigate()
-    const [user, setUser] = useState("")
-
-    const verify = (name) => {
-        if (name==="IT"|| name==='it'||name==='admin') {
-            navigate("/aXRtYWlu")
-        } else {
-            navigate("/dXNlcm1haW4=")
-        }
+    const [formData, setFormData] = useState({
+      email: "",
+      password: "",
+    });
+    const { email, password } = formData;
+    const navigate = useNavigate();
+    function onChange(e) {
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.id]: e.target.value,
+      }));
     }
+    async function onSubmit(e) {
+      e.preventDefault();
+      try {
+        const auth = getAuth();
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        if (userCredential.user) {
+          navigate("/");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     return(
-        <div className="text-center">
-            <form>
-                <h1>Home Page</h1>
-                <h3>Login/Signup</h3>
-                <label for="inputEmail" className="sr-only">Email address</label>
-                <input
-                  type="email"
-                  id="inputEmail"
-                  placeholder="Username (IT/admin)"
-                  onChange={(e) => setUser(e.target.value)}
-                  autofocus/>
-                <div>
-                  <label for="inputPassword" class="sr-only">password</label>
-                  <input type="password" id="inputPassword" placeholder="Password (optional)"/>
-                </div>
-                <p>{`Don't have an account? `}<Link to="/sign-up">Register</Link></p>
-                <button
-                  className="btn btn-lg btn-primary btn-block"
-                  onClick={() => verify(user)}
-                >Login
-                </button>
-            </form>
+        <div>
+          <h1>Home Page</h1>
+          <h3>Login/Signup</h3>
+          <form onSubmit={onSubmit}>
+            <div>
+              <label>email address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="email address"
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <label>password</label>
+              <input
+                type="text"
+                id="password"
+                value={password}
+                onChange={onChange}
+                placeholder="password"
+              />
+            </div>
+            <p>{`Don't have an account? `}<Link to="/sign-up">Register</Link></p>
+            <button>Login</button>
+          </form>
         </div>
     )
 }
