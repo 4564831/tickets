@@ -40,18 +40,37 @@ function App() {
         </Route>
 
         <Route path="/aXRtYWlu" element={<IMain/>}/>
+        <Route path="/it/main" element={<IMain/>}/>
+
         <Route path="/dXNlcm1haW4=" element={<UMain/>}/>
+        <Route path="/client/main" element={<UMain/>}/>
 
         <Route path="/aXRob21l" element={<IHome/>}/>
+        <Route path="/it/home" element={<IHome/>}/>
+
         <Route path="/aXRvcGVudGlja2V0cw==" element={<IOpenTicket/>}/>
+        <Route path="/it/open" element={<IOpenTicket/>}/>
+
         <Route path="/aXRjbG9zZWR0aWNrZXRz" element={<IClosedTicket/>}/>
+        <Route path="/it/closed" element={<IClosedTicket/>}/>
+
+        <Route path="/it/about" element={<IAbout/>}/>
         <Route path="/aXRhYm91dA==" element={<IAbout/>}/>
 
+        <Route path="/home" element={<UHome/>}/>
         <Route path="/Y2xpZW50aG9tZQ==" element={<UHome/>}/>
+
         <Route path="/Y2xpZW50bmV3dGlja2V0" element={<UNewTicket/>}/>
+        <Route path="/client/new" element={<UNewTicket/>}/>
+
         <Route path="/Y2xpZW50b3BlbnRpY2tldA==" element={<UOpenTicket/>}/>
+        <Route path="/client/open" element={<UOpenTicket/>}/>
+
         <Route path="/Y2xpZW50Y2xvc2VkdGlja2V0" element={<UClosedTicket/>}/>
+        <Route path="/client/closed" element={<UClosedTicket/>}/>
+
         <Route path="/Y2xpZW50YWJvdXQ=" element={<UAbout/>}/>
+        <Route path="/client/about" element={<UAbout/>}/>
       </Routes>
     </>
   );
