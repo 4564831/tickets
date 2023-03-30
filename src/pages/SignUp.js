@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import OAuth from "../components/OAuth";
 
 import { db as db0 } from "../config/firebase";
 import { db } from "../config/firebase-config";
@@ -30,22 +31,22 @@ export default function SignUp() {
         e.preventDefault();
 
         try {
-        const auth = getAuth();
-        const userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+            const auth = getAuth();
+            const userCredential = await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
-        updateProfile(auth.currentUser, {
-            displayName: name,
-        });
-        const user = userCredential.user;
-        const formDataCopy = { ...formData };
-        delete formDataCopy.password;
-        formDataCopy.timestamp = serverTimestamp();
+            updateProfile(auth.currentUser, {
+                displayName: name,
+            });
+            const user = userCredential.user;
+            const formDataCopy = { ...formData };
+            delete formDataCopy.password;
+            formDataCopy.timestamp = serverTimestamp();
 
-        await setDoc(doc(db0, "users", user.uid), formDataCopy);
+            await setDoc(doc(db0, "users", user.uid), formDataCopy);
             console.log("Sign up was successful");
             navigate("/");
         } catch (error) {
@@ -86,6 +87,7 @@ export default function SignUp() {
                 </div>
               <button>Submit</button>
             </form>
+            <OAuth/>
         </div>
     )
 }
