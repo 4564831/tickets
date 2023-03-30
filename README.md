@@ -1,5 +1,20 @@
-# firebase rules
-## firestore rules
+# Notes
+- [X] handle all routing
+- [X] add user registration
+- [X] add google signup
+- [X] add forgot password
+# Testing
+## Client account
+```
+email: user@gmail.com
+password: password
+```
+## Admin account
+```
+email: admin@gmail.com
+password: password
+```
+### Firestore rules
 ```
 rules_version = '2';
 service cloud.firestore {
@@ -11,7 +26,7 @@ service cloud.firestore {
   }
 }
 ```
-## storage rules
+### Storage rules
 ```
 rules_version = '2';
 service firebase.storage {
