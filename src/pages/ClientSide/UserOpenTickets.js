@@ -51,6 +51,7 @@ export default function UOpenTicket() {
       <div>
         <UNavigationBar/>
           <div className="tickets-background">
+            <h1>[Client]</h1>
             <h1>Open Tickets</h1>
             <div className="ticket-container">
                 {ticketList.sort((a, b) => (a.Timestamp > b.Timestamp) ? 1 : -1).map((ticks) => {

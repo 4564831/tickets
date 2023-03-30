@@ -31,7 +31,6 @@ export default function Profile() {
         </form>
         <p onClick={onLogout}>Sign out</p>
       </div>
-      <UserHome/>
     </>
   )
 }

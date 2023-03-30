@@ -27,7 +27,7 @@ export default function Header() {
         <h1>NavBar Component</h1>
         <div>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/home">Home</Link></li>
             <li><Link to="/new">New Tickets</Link></li>
             <li><Link to="/open">Open Tickets</Link></li>
             <li><Link to="/closed">Closed Tickets</Link></li>

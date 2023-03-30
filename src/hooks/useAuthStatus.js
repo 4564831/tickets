@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export function useAuthStatus() {
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [checkingStatus, setCheckingStatus] = useState(true);
 
@@ -12,8 +13,11 @@ export function useAuthStatus() {
       if (user) {
         setLoggedIn(true);
       }
+      if (user.displayName === "admin") {
+        setIsAdmin(true);
+      }
       setCheckingStatus(false);
     });
   }, []);
-  return { loggedIn, checkingStatus };
+  return { loggedIn, checkingStatus, isAdmin };
 }
